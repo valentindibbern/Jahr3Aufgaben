@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -15,26 +16,25 @@ public class Main {
         boolean running = true;
 
         while (running) {
-            System.out.print("Was wollen sie machen?(ggt/kgv): ");
-            String method = sc.nextLine();
+            try {
+                System.out.print("Was wollen sie machen?(ggt/kgv): ");
+                String method = sc.nextLine();
 
-            if (Objects.equals(method, "ggt")) {
                 System.out.print("Gib die erste Zahl ein: ");
                 int zahl1 = sc.nextInt();
                 System.out.print("Gib die zweite Zahl ein: ");
                 int zahl2 = sc.nextInt();
-                System.out.print(ggt(zahl1, zahl2));
 
-            } else if (Objects.equals(method, "kgv")) {
-                System.out.print("Gib die erste Zahl ein: ");
-                int zahl1 = sc.nextInt();
-                System.out.print("Gib die zweite Zahl ein: ");
-                int zahl2 = sc.nextInt();
-                System.out.print(kgv(zahl1, zahl2));
-
-            } else {
-                System.out.print("Das war keine ganze Zahl. Bitte versuche es erneut.");
-                continue;
+                if (Objects.equals(method, "ggt")) {
+                    System.out.print(ggt(zahl1, zahl2));
+                } else if (Objects.equals(method, "kgv")) {
+                    System.out.print(kgv(zahl1, zahl2));
+                } else {
+                    System.out.print("Das ist weder ggt noch kgv. Bitte versuche es erneut.");
+                    continue;
+                }
+            } catch (InputMismatchException e) {
+                System.out.print("Das war keine ganze Inputtype. Bitte versuche es erneut.");
             }
 
             System.out.println("Willst du weiter machen?(y/n): ");
