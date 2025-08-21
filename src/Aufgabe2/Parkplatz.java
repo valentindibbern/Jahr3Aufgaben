@@ -16,6 +16,6 @@ public class Parkplatz {
     public String getId() {return this.id;}
     public String getEtagenId() {return this.etagenId;}
     public String getParkhausId() {return this.parkhausId;}
-    public boolean isFrei() {return this.besetzt;}
+    public boolean isFrei() {return !this.besetzt;}
     public void toggelBesetzt() {this.besetzt = !this.besetzt;}
 }
