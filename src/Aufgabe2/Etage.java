@@ -27,4 +27,5 @@ public class Etage {
     public int getAnzahlOffeneParkplätze() {
         return Math.toIntExact(Arrays.stream(this.parkplätze).filter(Parkplatz::isFrei).count());
     }
+    public boolean isVoll() {return getAnzahlOffeneParkplätze() == 0;}
 }
