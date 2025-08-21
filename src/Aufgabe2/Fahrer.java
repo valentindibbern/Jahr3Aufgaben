@@ -13,16 +13,13 @@ public class Fahrer {
     public String getName() {
         return this.name;
     }
-
     public Auto getAuto() {
         return this.auto;
     }
-
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
-    }
-
     public Ticket getTicket() {
         return this.ticket;
+    }
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
     }
 }

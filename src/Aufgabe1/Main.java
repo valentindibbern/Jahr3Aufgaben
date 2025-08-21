@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Aufgabe1 {
+public class Main {
     public static int ggt(int a, int b) {
         return (a % b == 0) ? b : ggt(b, a % b);
     }
