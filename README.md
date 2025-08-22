@@ -24,6 +24,9 @@ Funktionalitäten.
    Algorithmus, die Kriterien für Code-Qualität [ink. Kohäsion 
    und Kopplung]
 
+![Programmablaufflowchart](src/Aufgabe1/FlowchartAufgabe1.png)
+![Algorithmusflowchart](src/Aufgabe1/Aufgabe1AlgorithmusFlowchart.png)
+
 #### Dateien
 - [__Maindatei__](src/Aufgabe1/Main.java)
 
@@ -50,6 +53,8 @@ folgende Funktionalitäten:
    Java in einem git-Repository.
 3. Kommentieren Sie im Source-Code die Konstrukte der OOP und das
    Solid-Prinzip.
+
+![UML](src/Aufgabe2/UMLAufgabe2.png)
 
 #### Dateien
 - [__Maindatei__](src/Aufgabe2/Main.java)

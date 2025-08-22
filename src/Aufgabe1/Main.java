@@ -4,13 +4,22 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
+
+    // Berechnet den größten gemeinsamen Teiler (GGT) rekursiv
+    // Algorithmus: Euklidischer Algorithmus
+    // Eigenschaften:
+    // - Hohe Kohäsion: Funktion macht genau eine Sache (GGT)
+    // - Geringe Kopplung: Benötigt nur die übergebenen Parameter
     public static int ggt(int a, int b) {
         return (a % b == 0) ? b : ggt(b, a % b);
     }
 
-    public static int kgv(int a, int b) {
-        return a * b / ggt(a, b);
-    }
+    // Berechnet das kleinste gemeinsame Vielfache (KGV)
+    // Algorithmus: KGV = (a*b)/GGT(a,b)
+    // Eigenschaften:
+    // - Hohe Kohäsion: Funktion fokussiert sich nur auf KGV
+    // - Geringe Kopplung: Ruft nur die GGT-Funktion auf, sonst keine Abhängigkeiten
+    public static int kgv(int a, int b) {return a * b / ggt(a, b);}
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
