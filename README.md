@@ -61,10 +61,17 @@ folgende Funktionalitäten:
 - [Fahrer](src/Aufgabe2/Fahrer.java)
 - [Auto](src/Aufgabe2/Auto.java)
 - [Ticket](src/Aufgabe2/Ticket.java)
-- [Ticketautomat](src/Aufgabe2/TicketAutomat.java)
-  - [Kassenautomat](src/Aufgabe2/KassenAutomat.java)
-  - [Schrankenautomat](src/Aufgabe2/SchrankenAutomat.java)
+- [Kassenautomat](src/Aufgabe2/KassenAutomat.java)
+- [Schrankenautomat](src/Aufgabe2/SchrankenAutomat.java)
 - [Schranke](src/Aufgabe2/Schranke.java)
 - [Parkplatz](src/Aufgabe2/Parkhaus.java)
 - [Etage](src/Aufgabe2/Etage.java)
 - [Parkhaus](src/Aufgabe2/Parkhaus.java)
+
+### [Aufgabe 3](src/Aufgabe3)
+Ziehl dieser Aufgabe ist es die Javakenntnisse zu festigen. Es soll ein
+Bankomat simuliert werden. Dies soll unter den gleichen richtlinien wie in
+den vorigen beiden Aufgaben geschehen sowie unter dem MVC Konzept.
+
+#### Dateien
+- [__Maindatei__](src/Aufgabe3/Main.java)
