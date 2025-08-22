@@ -18,12 +18,21 @@ public class Schranke {
         schrankenCounter++;
     }
 
-    public Optional<Ticket> einfahren() {
+    public Optional<Ticket> einfahren(Auto auto) {
         if (this.parkhaus.getAnzahlOffeneParkplätze() != 0) {
+            auto.toggleInParkhaus();
             return Optional.ofNullable(this.schrankenAutomat.giveTicket());
         } else {
             System.out.println("Parkhaus voll.");
             return Optional.empty();
+        }
+    }
+
+    public void ausfahren(Fahrer fahrer) {
+        if (fahrer.getTicket().isBezahlt()) {
+            fahrer.getAuto().toggleInParkhaus();
+        } else {
+            System.out.println("Ticket noch nicht bezahlt.");
         }
     }
 }

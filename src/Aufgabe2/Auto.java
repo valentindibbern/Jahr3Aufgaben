@@ -1,15 +1,18 @@
 package Aufgabe2;
 
 public class Auto {
-    private final int id;
-    private Fahrer fahrer;
+    private final String id;
     private String parkplatzId;
+    private Boolean inParkhaus;
 
-    public Auto(int id) {this.id = id;}
+    public Auto(String id) {
+        this.id = id;
+        this.inParkhaus = false;
+    }
 
-    public int getId() {return this.id;}
-    public Fahrer getFahrer() {return this.fahrer;}
+    public String getId() {return this.id;}
     public String setParkplatzId() {return this.parkplatzId;}
-    public void setFahrer(Fahrer fahrer) {this.fahrer = fahrer;}
+    public boolean inParkhaus() {return this.inParkhaus;}
     public void setParkplatzId(String parkplatzId) {this.parkplatzId = parkplatzId;}
+    public void toggleInParkhaus() {this.inParkhaus = !this.inParkhaus;}
 }

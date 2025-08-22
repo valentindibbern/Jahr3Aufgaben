@@ -1,8 +1,6 @@
 package Aufgabe2;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Parkhaus {
     private final String id;
@@ -10,6 +8,8 @@ public class Parkhaus {
     private final int anzahlParkplätze;
     private final int anzahlEtagen;
     private final Etage[] etagen;
+    public final Schranke einfahrtsschranke;
+    public final Schranke ausfahrtsschranke;
 
     public Parkhaus(String id, int anzahlParkplätzeProEtage, int anzahlEtagen) {
         this.id = id;
@@ -17,6 +17,8 @@ public class Parkhaus {
         this.anzahlEtagen = anzahlEtagen;
         this.etagen = new Etage[this.anzahlEtagen];
         this.anzahlParkplätze = this.anzahlParkplätzeProEtage * this.anzahlEtagen;
+        this.einfahrtsschranke = new Schranke(this);
+        this.ausfahrtsschranke = new Schranke(this);
 
         for (int i = 0; i < this.anzahlEtagen; i++) {
             this.etagen[i] = new Etage(this.id + i, this.id, this.anzahlParkplätzeProEtage);
@@ -29,6 +31,8 @@ public class Parkhaus {
     public int getAnzahlOffeneParkplätze() {
         return Arrays.stream(this.etagen).mapToInt(Etage::getAnzahlOffeneParkplätze).sum();
     }
+    public Schranke getEinfahrtsschranke() {return this.einfahrtsschranke;}
+    public Schranke getAusfahrtsschranke() {return this.ausfahrtsschranke;}
 
     public void checkDisplay() {
         System.out.println("Gesammte offene Parkplätze: " + this.getAnzahlOffeneParkplätze());
