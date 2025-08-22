@@ -1,6 +1,7 @@
 package Aufgabe2;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public class Etage {
     private final String id;
@@ -21,11 +22,24 @@ public class Etage {
         }
     }
 
-    public String getId() {return this.id;}
-    public String getParkhausId() {return this.parkhausId;}
-    public int getAnzahlParkplätze() {return this.anzahlParkplätze;}
+    public boolean isVoll() {return getAnzahlOffeneParkplätze() == 0;}
     public int getAnzahlOffeneParkplätze() {
         return Math.toIntExact(Arrays.stream(this.parkplätze).filter(Parkplatz::isFrei).count());
     }
-    public boolean isVoll() {return getAnzahlOffeneParkplätze() == 0;}
+    public Optional<Parkplatz> getNächstenFreienParkplatz() {
+        for (Parkplatz parkplatz : this.parkplätze) {
+            if (parkplatz.isFrei()) {
+                return Optional.of(parkplatz);
+            }
+        }
+        return Optional.empty();
+    }
+    public Optional<Parkplatz> getNächstenBesetztenParkplatz() {
+        for (Parkplatz parkplatz : this.parkplätze) {
+            if (!parkplatz.isFrei()) {
+                return Optional.of(parkplatz);
+            }
+        }
+        return Optional.empty();
+    }
 }

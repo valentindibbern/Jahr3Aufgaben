@@ -14,5 +14,7 @@ public class Main {
         parkhaus.checkDisplay();
         fahrer1.setTicket(parkhaus.getEinfahrtsschranke().einfahren(auto1));
         System.out.printf("Is in Parkhaus: %b.%n", fahrer1.getAuto().inParkhaus());
+        fahrer2.setTicket(parkhaus.getEinfahrtsschranke().einfahren(auto2));
+        parkhaus.checkDisplay();
     }
 }
