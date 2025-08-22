@@ -7,18 +7,22 @@ public class Ticket {
     private final int ticketId;
     private final long einfahrtsZeit;
     private boolean bezahlt;
+    private long bezahlsZeit;
+    private long zeit;
 
     public Ticket() {
         this.ticketId = ticketCounter;
-        this.einfahrtsZeit = System.currentTimeMillis();
+        this.einfahrtsZeit = System.nanoTime();
         this.bezahlt = false;
 
         ticketCounter++;
     }
 
-    // Getter/Setter
-    public int getTicketId() {return ticketId;}
     public long getEinfahrtsZeit() {return einfahrtsZeit;}
     public boolean isBezahlt() {return bezahlt;}
-    public void toggleBezahlt() {this.bezahlt = !this.bezahlt;}
+    public void bezahlen() {
+        this.bezahlsZeit = System.nanoTime();
+        this.zeit = this.bezahlsZeit - this.einfahrtsZeit;
+        this.bezahlt = true;
+    }
 }

@@ -12,6 +12,6 @@ public class KassenAutomat {
     }
 
     public void bezahlTicket(Ticket ticket) {
-        ticket.toggleBezahlt();
+        ticket.bezahlen();
     }
 }
